@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const authorRoute = require('./routes/author');
+const bookRoute = require('./routes/book');
 const corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200
@@ -26,10 +27,8 @@ const connectDB = async () => {
         console.error("Connect database failed!!");
     }
 }
-
 connectDB();
-
 app.use('/api/v1/author', authorRoute);
-
+app.use('/api/v1/book', bookRoute);
 app.listen(port, () => console.log(`App started on port http://localhost:${port}`));
 
