@@ -1,0 +1,24 @@
+path abc hoặc abcd 
+app.get('/abcd?', function (req, res) {
+  res.send('khớp');
+})
+
+path dạng abcd hoặc abcdd hoặc abcddd,...
+app.get('/abcd+', function (req, res) {
+  res.send('khớp');
+})
+
+path dạng abcd hoặc abcxd hoặc abctoidicoded,... 
+app.get('/abc*d', function (req, res) {
+  res.send('khớp');
+});
+
+path dạng abcdfly hoặc abcxdfly,... 
+app.get('/.*fly$/', function (req, res) {
+  res.send('khớp');
+});
+
+path dạng aaaa hoặc abcd, afdgdkg(Lay ra route co ki tu a dau tien)
+app.get('/a/', function (req, res) {
+  res.send('khớp');
+});

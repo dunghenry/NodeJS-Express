@@ -8,9 +8,9 @@ const middleware = require('./middleware/middleware');
 const cors = require('cors');
 const morgan = require('morgan');
 const corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200
-}
+    origin: '*',
+    optionsSuccessStatus: 200
+};
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
